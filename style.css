@@ -1,0 +1,370 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #eee;
+    line-height: 1.6;
+    overflow-x: hidden;
+    animation: rgbBlueCycle 20s infinite alternate;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-title {
+    color: #ADD8E6;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    order: 2; /* Push title to the right */
+}
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    order: 1; /* Keep hamburger on the left */
+    transition: transform 0.3s ease;
+}
+
+/* Add this rule to reset the rotation */
+.hamburger.open {
+    transform: rotate(90deg); /* Rotate 90 degrees on hover */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Drawer Styles */
+.drawer {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(20, 30, 80, 0.9);
+    padding: 2rem;
+    transition: left 0.4s ease-in-out;
+    z-index: 99;
+    overflow-y: auto;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.drawer h2 {
+    color: #ADD8E6;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.drawer a {
+    display: block;
+    padding: 0.75rem 0;
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative; /* For positioning the lines */
+    margin: 0 auto; /* Center horizontally */
+    width: fit-content; /* Fit content so lines are close */
+}
+
+.drawer a:hover {
+    color: #ADD8E6;
+}
+
+/* Corner Lines for Drawer Links */
+.drawer a::before,
+.drawer a::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #eee;
+    transition: border-color 0.3s ease;
+}
+
+.drawer a::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.drawer a::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.drawer a:hover::before,
+.drawer a:hover::after {
+    border-color: #ADD8E6;
+}
+
+.drawer.open {
+    display: block;
+    left: 0;
+}
+/* Socials Dropdown Button */
+.socials-dropdown-btn {
+    position: relative; /* For positioning the lines */
+    background: none;
+    border: none;
+    color: #eee;
+    cursor: pointer;
+    padding: 0.75rem 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto; /* Let the content determine the width */
+    text-align: center;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    margin: 0 auto; /* Center horizontally */
+    outline: none; /* Remove the default button outline */
+}
+
+.socials-dropdown-btn:hover {
+    color: #ADD8E6;
+}
+
+/* Corner Lines */
+.socials-dropdown-btn::before,
+.socials-dropdown-btn::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #eee;
+    transition: border-color 0.3s ease;
+}
+
+.socials-dropdown-btn::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.socials-dropdown-btn::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.socials-dropdown-btn:hover::before,
+.socials-dropdown-btn:hover::after {
+    border-color: #ADD8E6;
+}
+
+/* Socials Dropdown Content */
+.social-dropdown {
+    display: none;
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center the content */
+    margin: 0 auto; /* Center the dropdown container */
+}
+
+.social-dropdown a {
+    padding: 0.5rem 0;
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-dropdown a:hover {
+    color: #ADD8E6;
+}
+
+/* Socials Dropdown Content */
+.social-dropdown {
+    display: none;
+    padding-left: 0rem; /* Changed to 0 to allow centering */
+    text-align: center; /* Center the content */
+}
+
+.social-dropdown a {
+    padding: 0.5rem 0;
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-dropdown a:hover {
+    color: #ADD8E6;
+}
+
+.social-dropdown.show {
+    display: block; /* Show the dropdown content */
+}
+
+/* Caret Icon */
+.fa-caret-down {
+    transition: transform 0.3s ease;
+}
+
+.fa-caret-down.rotate {
+    transform: rotate(180deg);
+}
+
+/* Rest of your existing CSS (sections, social buttons, etc.) */
+header, section, footer {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3 {
+    color: #ADD8E6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    color: #6495ED;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ADD8E6;
+}
+
+#featured-quote {
+    font-style: italic;
+    text-align: center;
+}
+
+#quote-text {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#quotes-container {
+    padding: 1rem;
+}
+
+#quotes-container p {
+    margin-bottom: 0.5rem; /* Spacing between quotes */
+}
+
+/* Social Buttons */
+.social-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: auto;
+}
+
+#social-trigger {
+    background-color: #6495ED;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+#social-trigger:hover {
+    background-color: #ADD8E6;
+    color: black;
+}
+
+#social-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    align-items: center;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(100, 149, 237, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(173, 216, 230, 0.9);
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/* RGB Color Cycling (Blue-ish) */
+@keyframes rgbBlueCycle {
+    0% { background-color: rgb(20, 30, 80); }
+    25% { background-color: rgb(30, 60, 120); }
+    50% { background-color: rgb(40, 80, 160); }
+    75% { background-color: rgb(20, 70, 140); }
+    100% { background-color: rgb(20, 30, 80); }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Basic responsive adjustments */
+@media (max-width: 768px) {
+    header, section, footer {
+        padding: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #quote-text {
+        font-size: 1.2rem;
+    }
+}

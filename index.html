@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben's Quotes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav>
+        <button class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <div class="nav-title">Ben's Musings</div>
+    </nav>
+
+    <div class="drawer" align="center">
+    <h2>Ben's Musings</h2>
+    <a href="#home">Home</a><br>
+    <a href="#about">About</a><br>
+    <a href="#featured-quote">Quotes</a><br>
+    <a href="#poetry">Poetry</a><br>
+
+    <button class="socials-dropdown-btn">
+    Socials<i class="fas fa-caret-down"></i>
+</button>
+    <div class="social-dropdown" align="center">
+        <a href="#" target="_blank"><img src="images/gmail.jpg" alt="Gmail" height="50" width="50"></a>
+        <a href="#" target="_blank"><img src="images/facebook.jpg" alt="Facebook" height="50" width="50"> </a>
+        <a href="#" target="_blank"><img src="images/telegram.jpg" alt="Telegram" height="50" width="50"> </a>
+    </div>
+</div>
+
+    <section id="home">
+	    <h1 align="center"><font size="15">ℌ𝔒𝔐𝔈</font></h1>
+        <h2>Home</h2>
+        <p>Welcome to my website!</p>
+    </section>
+
+    <section id="about">
+	<h1 align="center"><font size="15">𝕬𝕭𝕺𝖀𝕿</font></h1>
+        <h2>About Ben</h2>
+        <p>Hello, I'm Ben! I'm passionate about sharing meaningful quotes and reflections on life.</p>
+        <h3>My Goal</h3>
+        <p>My goal is to inspire and uplift others through the power of words.</p>
+    </section>
+
+    <section id="what-is-a-quote">
+        <h2>What is a Quote?</h2>
+        <p>A quote is a snippet of wisdom, a memorable phrase, or a thought-provoking statement that resonates with us.  It can be a guiding principle, a source of motivation, or simply a beautiful expression of an idea.</p>
+    </section>
+
+    <section id="featured-quote">
+        <h2>Featured Quote</h2>
+        <blockquote id="quote-text">
+            "The only way to do great work is to love what you do." - Steve Jobs
+        </blockquote>
+        <p id="quote-author"></p>
+    </section>
+	
+	<!-- Add a container for dynamically generated quotes -->
+<section id="quotes">
+    <h2>All Quotes</h2>
+    <div id="quotes-container">
+        <!-- Quotes will be added here by JavaScript -->
+    </div>
+</section>
+
+	<section id="what-is-a-quote">
+        <h2>What is Poetry?</h2>
+        <p>Poetry is literature that evokes a concentrated imaginative awareness of experience or an emotional response through language chosen and arranged for its meaning, sound, and rhythm.</p>
+    </section>
+
+    <section id="poetry">
+	<h1 align="center"><font size="15">𝕻𝕺𝕰𝕿𝕾</font></h1>
+        <h2>Poetry</h2>
+        <div class="poem">
+            <h3>A Simple Poem</h3>
+            <p>
+                The sky is blue, the grass is green,<br>
+                A peaceful sight, a tranquil scene.<br>
+                The wind whispers secrets in the trees,<br>
+                A gentle breeze, a calming ease.
+            </p>
+        </div>
+    </section>
+
+    <footer align="center">
+        <p>© 2024 Ben's Quotes</p>
+    </footer>
+
+    <div class="social-buttons">
+        <button id="social-trigger"><i class="fa-solid fa-share-nodes"></i></button>
+        <div id="social-links" class="hidden">
+            <a href="#" target="_blank" class="social-icon"><img src="images/gmail.jpg" alt="Gmail"></a>
+            <a href="#" target="_blank" class="social-icon"><img src="images/facebook.jpg" alt="Facebook"></a>
+            <a href="#" target="_blank" class="social-icon"><img src="images/telegram.jpg" alt="Telegram"></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
